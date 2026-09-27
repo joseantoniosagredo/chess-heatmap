@@ -458,7 +458,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
       .attr("class", "base-sq")
       .attr("width", sqSize)
       .attr("height", sqSize)
-      .attr("fill", (d) => ((d.row + d.col) % 2 === 0 ? "#1e293b" : "#0f172a"));
+      .attr("fill", (d) => ((d.row + d.col) % 2 === 0 ? "#403D39" : "#262421"));
 
     // 2. Rectángulo del Mapa de Calor (animado por D3)
     cellEnter
@@ -479,7 +479,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
       .attr("height", sqSize - 6)
       .attr("rx", 6)
       .attr("fill", "none")
-      .attr("stroke", "#38bdf8")
+      .attr("stroke", "#81B64C")
       .attr("stroke-width", 2.5)
       .attr("stroke-dasharray", "5,3")
       .attr("opacity", 0);
@@ -580,7 +580,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
         .attr("x", i * sqSize + sqSize / 2)
         .attr("y", boardSize + 18)
         .attr("text-anchor", "middle")
-        .attr("fill", "#94a3b8")
+        .attr("fill", "#9B9997")
         .attr("font-size", "12px")
         .attr("font-weight", "600")
         .text(f);
@@ -592,7 +592,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
         .attr("x", -14)
         .attr("y", i * sqSize + sqSize / 2 + 4)
         .attr("text-anchor", "middle")
-        .attr("fill", "#94a3b8")
+        .attr("fill", "#9B9997")
         .attr("font-size", "12px")
         .attr("font-weight", "600")
         .text(r);
@@ -604,9 +604,9 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
   // ==========================================================================
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 bg-slate-950 text-slate-100 rounded-2xl border border-slate-800 shadow-2xl font-sans">
+    <div className="w-full max-w-6xl mx-auto p-6 bg-[#262421] text-[#E0E0E0] rounded-2xl border border-[#3C3A38] shadow-2xl font-sans">
       {/* Cabecera */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#3C3A38]">
         <div>
           <div className="flex items-center gap-3">
             <h2 className="text-2xl font-bold tracking-tight text-white">
@@ -618,22 +618,22 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
               </span>
             )}
           </div>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-sm text-[#9B9997] mt-1">
             Análisis bivariado de frecuencia y correlación de victoria por fase
             de juego
           </p>
         </div>
 
         {/* Selector de Rango de ELO */}
-        <div className="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800">
+        <div className="flex items-center bg-[#1E1C1A] p-1 rounded-xl border border-[#3C3A38]">
           {ELO_BUCKETS.map((bucket) => (
             <button
               key={bucket}
               onClick={() => setEloBucket(bucket)}
               className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
                 eloBucket === bucket
-                  ? "bg-sky-500 text-slate-950 shadow-md"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-[#81B64C] text-[#262421] shadow-md"
+                  : "text-[#9B9997] hover:text-[#E0E0E0]"
               }`}
             >
               {bucket}
@@ -647,14 +647,14 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
         {/* COLUMNA IZQUIERDA: Controles de Pieza, Fase y Métrica (5 cols) */}
         <div className="lg:col-span-5 flex flex-col gap-6">
           {/* 1. Selector de Bando y Agrupación */}
-          <div className="bg-slate-900/70 p-4 rounded-xl border border-slate-800/80 space-y-4">
+          <div className="bg-[#1E1C1A]/70 p-4 rounded-xl border border-[#3C3A38] space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#9B9997]">
                 1. Bando e Identidad
               </span>
               <button
                 onClick={() => setFlipBoard((f) => !f)}
-                className="text-xs text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1"
+                className="text-xs text-[#81B64C] hover:text-[#A3D160] font-medium flex items-center gap-1"
               >
                 ⇅ Rotar tablero
               </button>
@@ -668,8 +668,8 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                 }}
                 className={`py-2 px-3 rounded-lg font-semibold text-sm border transition-all ${
                   color === "W"
-                    ? "bg-white text-slate-950 border-white"
-                    : "bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700"
+                    ? "bg-[#F8F8F8] text-[#262421] border-[#F8F8F8]"
+                    : "bg-[#262421] text-[#9B9997] border-[#3C3A38] hover:border-[#4B4845]"
                 }`}
               >
                 ♔ Piezas Blancas
@@ -681,8 +681,8 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                 }}
                 className={`py-2 px-3 rounded-lg font-semibold text-sm border transition-all ${
                   color === "B"
-                    ? "bg-slate-800 text-white border-sky-500"
-                    : "bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700"
+                    ? "bg-[#1E1C1A] text-[#F8F8F8] border-[#81B64C]"
+                    : "bg-[#262421] text-[#9B9997] border-[#3C3A38] hover:border-[#4B4845]"
                 }`}
               >
                 ♚ Piezas Negras
@@ -698,8 +698,8 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                   title={p.name}
                   className={`flex flex-col items-center py-2 rounded-lg border transition-all ${
                     pieceType === p.type
-                      ? "bg-sky-500/20 border-sky-500 text-sky-300"
-                      : "bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200"
+                      ? "bg-[#81B64C]/20 border-[#81B64C] text-[#A3D160]"
+                      : "bg-[#262421] border-[#3C3A38] text-[#9B9997] hover:text-[#E0E0E0]"
                   }`}
                 >
                   <span className="text-2xl leading-none">{p.icon}</span>
@@ -710,9 +710,9 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
 
             {/* Toggle Agrupar vs Pieza Individual */}
             {PIECE_ORIGINS[color][pieceType].length > 1 && (
-              <div className="pt-2 border-t border-slate-800/80 space-y-3">
+              <div className="pt-2 border-t border-[#3C3A38] space-y-3">
                 <label className="flex items-center justify-between cursor-pointer">
-                  <span className="text-xs text-slate-300 font-medium">
+                  <span className="text-xs text-[#E0E0E0] font-medium">
                     Agrupar piezas del mismo tipo ({`${color}_${pieceType}_ALL`}
                     )
                   </span>
@@ -722,7 +722,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                     onChange={(e) => setIsGrouped(e.target.checked)}
                     className="sr-only peer"
                   />
-                  <div className="w-9 h-5 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all relative peer-checked:bg-sky-500" />
+                  <div className="w-9 h-5 bg-[#4B4845] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all relative peer-checked:bg-[#81B64C]" />
                 </label>
 
                 {!isGrouped && (
@@ -733,8 +733,8 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                         onClick={() => setSelectedOriginId(orig.id)}
                         className={`py-1.5 px-2.5 text-xs font-medium rounded-md border text-left truncate transition-all ${
                           selectedOriginId === orig.id
-                            ? "bg-sky-500/15 border-sky-400 text-sky-300"
-                            : "bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200"
+                            ? "bg-[#81B64C]/15 border-[#81B64C] text-[#A3D160]"
+                            : "bg-[#262421] border-[#3C3A38] text-[#9B9997] hover:text-[#E0E0E0]"
                         }`}
                       >
                         {orig.label}
@@ -747,17 +747,17 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
           </div>
 
           {/* 2. Control de Fase + Botón Animar */}
-          <div className="bg-slate-900/70 p-4 rounded-xl border border-slate-800/80 space-y-3">
+          <div className="bg-[#1E1C1A]/70 p-4 rounded-xl border border-[#3C3A38] space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#9B9997]">
                 2. Fase de la Partida
               </span>
               <button
                 onClick={() => setIsPlaying((p) => !p)}
                 className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
                   isPlaying
-                    ? "bg-rose-500 text-white shadow-lg shadow-rose-500/25"
-                    : "bg-sky-500/15 text-sky-400 border border-sky-500/30 hover:bg-sky-500/25"
+                    ? "bg-[#C84630] text-white shadow-lg shadow-[#C84630]/25"
+                    : "bg-[#81B64C]/15 text-[#A3D160] border border-[#81B64C]/30 hover:bg-[#81B64C]/25"
                 }`}
               >
                 {isPlaying ? "⏸ Pausar Animación" : "▶ Animar Fases"}
@@ -774,12 +774,12 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                   }}
                   className={`p-2.5 rounded-lg border text-left transition-all ${
                     phase === p.id
-                      ? "bg-sky-500/20 border-sky-500 text-white"
-                      : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                      ? "bg-[#81B64C]/20 border-[#81B64C] text-white"
+                      : "bg-[#262421] border-[#3C3A38] text-[#9B9997] hover:border-[#4B4845]"
                   }`}
                 >
                   <div className="text-xs font-bold">{p.label}</div>
-                  <div className="text-[10px] text-slate-400 mt-0.5 line-clamp-1">
+                  <div className="text-[10px] text-[#9B9997] mt-0.5 line-clamp-1">
                     {p.desc}
                   </div>
                 </button>
@@ -788,8 +788,8 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
           </div>
 
           {/* 3. Selector de Capa / Métrica */}
-          <div className="bg-slate-900/70 p-4 rounded-xl border border-slate-800/80 space-y-2.5">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+          <div className="bg-[#1E1C1A]/70 p-4 rounded-xl border border-[#3C3A38] space-y-2.5">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#9B9997] block">
               3. Capa de Visualización
             </span>
             <div className="space-y-1.5">
@@ -799,12 +799,12 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                   onClick={() => setMetricMode(m.id)}
                   className={`w-full p-2.5 rounded-lg border text-left transition-all ${
                     metricMode === m.id
-                      ? "bg-sky-500/15 border-sky-500 text-white"
-                      : "bg-slate-950/70 border-slate-800/80 text-slate-400 hover:border-slate-700"
+                      ? "bg-[#81B64C]/15 border-[#81B64C] text-[#E0E0E0]"
+                      : "bg-[#262421]/70 border-[#3C3A38]/80 text-[#9B9997] hover:border-[#4B4845]"
                   }`}
                 >
                   <div className="text-xs font-semibold">{m.label}</div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">
+                  <div className="text-[11px] text-[#9B9997] mt-0.5">
                     {m.description}
                   </div>
                 </button>
@@ -815,7 +815,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
 
         {/* COLUMNA DERECHA: Tablero SVG D3 + Leyenda + Inspector (7 cols) */}
         <div className="lg:col-span-7 flex flex-col items-center">
-          <div className="relative w-full max-w-[616px] aspect-square bg-slate-900 rounded-2xl p-2 border border-slate-800 shadow-inner">
+          <div className="relative w-full max-w-[616px] aspect-square bg-[#1E1C1A] rounded-2xl p-2 border border-[#3C3A38] shadow-inner">
             <svg
               ref={svgRef}
               viewBox="0 0 616 616"
@@ -826,8 +826,8 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
           {/* Leyenda Bivariada e Inspector de Casilla */}
           <div className="w-full max-w-[616px] mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Leyenda */}
-            <div className="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="bg-[#1E1C1A]/80 p-3.5 rounded-xl border border-[#3C3A38] flex flex-col justify-between">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#9B9997]">
                 Escala Visual Activa
               </span>
               <div className="my-2">
@@ -837,10 +837,10 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                     background:
                       metricMode === "bivariate" || metricMode === "win_rate"
                         ? "linear-gradient(90deg, #38bdf8 0%, #facc15 50%, #f43f5e 100%)"
-                        : "linear-gradient(90deg, #1e293b 0%, #f59e0b 50%, #ef4444 100%)",
+                        : "linear-gradient(90deg, #262421 0%, #f59e0b 50%, #ef4444 100%)",
                   }}
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 mt-1 font-medium">
+                <div className="flex justify-between text-[10px] text-[#9B9997] mt-1 font-medium">
                   {metricMode === "bivariate" || metricMode === "win_rate" ? (
                     <>
                       <span>&lt;45% Win (Desfavorable)</span>
@@ -857,43 +857,43 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                 </div>
               </div>
               {originSquare && (
-                <div className="text-[11px] text-sky-400 flex items-center gap-1.5">
-                  <span className="inline-block w-2.5 h-2.5 border border-dashed border-sky-400 rounded-sm" />
+                <div className="text-[11px] text-[#81B64C] flex items-center gap-1.5">
+                  <span className="inline-block w-2.5 h-2.5 border border-dashed border-[#81B64C] rounded-sm" />
                   Casilla de origen: <strong>{originSquare}</strong>
                 </div>
               )}
             </div>
 
             {/* Inspector de Casilla (Hover Tooltip Fijo) */}
-            <div className="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <div className="bg-[#1E1C1A]/80 p-3.5 rounded-xl border border-[#3C3A38]">
               {hoveredCell ? (
                 <div className="space-y-1.5">
-                  <div className="flex items-center justify-between border-b border-slate-800 pb-1">
-                    <span className="text-sm font-bold text-white">
+                  <div className="flex items-center justify-between border-b border-[#3C3A38] pb-1">
+                    <span className="text-sm font-bold text-[#E0E0E0]">
                       Casilla {hoveredCell.square.toUpperCase()}
                     </span>
-                    <span className="text-xs text-slate-400">
+                    <span className="text-xs text-[#9B9997]">
                       {hoveredCell.games.toLocaleString()} partidas
                     </span>
                   </div>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs pt-1">
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Estancia:</span>
-                      <span className="font-semibold text-slate-200">
+                      <span className="text-[#9B9997]">Estancia:</span>
+                      <span className="font-semibold text-[#E0E0E0]">
                         {hoveredCell.occ_pct}%
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Win Rate:</span>
+                      <span className="text-[#9B9997]">Win Rate:</span>
                       <span
                         className={`font-bold ${
                           hoveredCell.win_rate === null
-                            ? "text-slate-500"
+                            ? "text-[#7A7876]"
                             : hoveredCell.win_rate >= 52
-                              ? "text-rose-400"
+                              ? "text-[#f43f5e]"
                               : hoveredCell.win_rate <= 48
-                                ? "text-sky-400"
-                                : "text-amber-300"
+                                ? "text-[#38bdf8]"
+                                : "text-[#facc15]"
                         }`}
                       >
                         {hoveredCell.win_rate !== null
@@ -902,21 +902,21 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Movimientos:</span>
-                      <span className="font-semibold text-slate-200">
+                      <span className="text-[#9B9997]">Movimientos:</span>
+                      <span className="font-semibold text-[#E0E0E0]">
                         {hoveredCell.move_pct}%
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Capturas:</span>
-                      <span className="font-semibold text-slate-200">
+                      <span className="text-[#9B9997]">Capturas:</span>
+                      <span className="font-semibold text-[#E0E0E0]">
                         {hoveredCell.capture_rate}%
                       </span>
                     </div>
                   </div>
                 </div>
               ) : (
-                <div className="h-full flex items-center justify-center text-xs text-slate-500 text-center py-4">
+                <div className="h-full flex items-center justify-center text-xs text-[#7A7876] text-center py-4">
                   Pasa el cursor por cualquier casilla del tablero para
                   inspeccionar sus métricas exactas.
                 </div>

@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import ChessHeatmapVisualizer from "../components/ChessHeatMap";
 ---
 
@@ -7,11 +8,13 @@ import ChessHeatmapVisualizer from "../components/ChessHeatMap";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Chess Analysis Heatmap</title>
   </head>
-  <body>
-    <ChessHeatmapVisualizer client:only="react" />
+  <body class="bg-[#312E2B] text-slate-300 min-h-screen antialiased flex flex-col items-center py-10 px-4">
+    <div class="w-full max-w-7xl mx-auto">
+      <ChessHeatmapVisualizer client:only="react" />
+    </div>
   </body>
 </html>
