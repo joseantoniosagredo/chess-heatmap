@@ -255,6 +255,7 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
   const [metricMode, setMetricMode] = useState<MetricMode>("bivariate");
   const [flipBoard, setFlipBoard] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   // --- Estado de Datos y Tooltip ---
   const [eloData, setEloData] = useState<EloHeatmapFile | null>(null);
@@ -624,28 +625,51 @@ export const ChessHeatmapVisualizer: React.FC<Props> = ({
           </p>
         </div>
 
-        {/* Selector de Rango de ELO */}
-        <div className="flex items-center bg-[#1E1C1A] p-1 rounded-xl border border-[#3C3A38]">
-          {ELO_BUCKETS.map((bucket) => (
-            <button
-              key={bucket}
-              onClick={() => setEloBucket(bucket)}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-                eloBucket === bucket
-                  ? "bg-[#81B64C] text-[#262421] shadow-md"
-                  : "text-[#9B9997] hover:text-[#E0E0E0]"
-              }`}
-            >
-              {bucket}
-            </button>
-          ))}
+        {/* Selector de Rango de ELO y Botón Filtros */}
+        <div className="flex flex-wrap items-center gap-3">
+          <button 
+            onClick={() => setIsSidebarOpen(true)}
+            className="lg:hidden px-4 py-1.5 bg-[#1E1C1A] border border-[#3C3A38] rounded-xl text-xs font-semibold text-[#E0E0E0] hover:text-white"
+          >
+            Filtros ☰
+          </button>
+          <div className="flex items-center bg-[#1E1C1A] p-1 rounded-xl border border-[#3C3A38]">
+            {ELO_BUCKETS.map((bucket) => (
+              <button
+                key={bucket}
+                onClick={() => setEloBucket(bucket)}
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                  eloBucket === bucket
+                    ? "bg-[#81B64C] text-[#262421] shadow-md"
+                    : "text-[#9B9997] hover:text-[#E0E0E0]"
+                }`}
+              >
+                {bucket}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Cuerpo Principal */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6 relative">
+        
+        {/* Overlay Móvil */}
+        {isSidebarOpen && (
+          <div 
+            className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
         {/* COLUMNA IZQUIERDA: Controles de Pieza, Fase y Métrica (5 cols) */}
-        <div className="lg:col-span-5 flex flex-col gap-6">
+        <div className={`fixed inset-y-0 left-0 z-50 w-72 sm:w-80 bg-[#262421] p-6 overflow-y-auto transition-transform duration-300 lg:static lg:w-auto lg:p-0 lg:bg-transparent lg:z-auto lg:overflow-visible lg:transform-none lg:col-span-5 flex flex-col gap-6 ${isSidebarOpen ? "translate-x-0 border-r border-[#3C3A38] lg:border-none shadow-2xl lg:shadow-none" : "-translate-x-full lg:translate-x-0"}`}>
+          
+          {/* Cabecera Filtros Móvil */}
+          <div className="flex justify-between items-center lg:hidden mb-2">
+            <span className="font-bold text-white text-lg">Filtros</span>
+            <button onClick={() => setIsSidebarOpen(false)} className="text-[#9B9997] hover:text-white text-3xl leading-none">&times;</button>
+          </div>
           {/* 1. Selector de Bando y Agrupación */}
           <div className="bg-[#1E1C1A]/70 p-4 rounded-xl border border-[#3C3A38] space-y-4">
             <div className="flex items-center justify-between">
