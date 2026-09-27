@@ -1,0 +1,339 @@
+{
+  "elo_files": [
+    {
+      "elo_bucket": "<1200",
+      "file": "heatmap_under_1200.json",
+      "size_kb": 1612.9
+    },
+    {
+      "elo_bucket": "1200-1600",
+      "file": "heatmap_1200-1600.json",
+      "size_kb": 1664.2
+    },
+    {
+      "elo_bucket": "1600-2000",
+      "file": "heatmap_1600-2000.json",
+      "size_kb": 1663.2
+    },
+    {
+      "elo_bucket": "2000-2400",
+      "file": "heatmap_2000-2400.json",
+      "size_kb": 1623.9
+    }
+  ],
+  "phases": [
+    "apertura",
+    "medio",
+    "final"
+  ],
+  "pieces_catalog": [
+    {
+      "id": "B_B_f8",
+      "type": "B",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "f8"
+    },
+    {
+      "id": "B_B_c8",
+      "type": "B",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "c8"
+    },
+    {
+      "id": "B_K_e8",
+      "type": "K",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "e8"
+    },
+    {
+      "id": "B_N_g8",
+      "type": "N",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "g8"
+    },
+    {
+      "id": "B_N_b8",
+      "type": "N",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "b8"
+    },
+    {
+      "id": "B_P_c7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "c7"
+    },
+    {
+      "id": "B_P_d7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "d7"
+    },
+    {
+      "id": "B_P_g7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "g7"
+    },
+    {
+      "id": "B_P_a7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "a7"
+    },
+    {
+      "id": "B_P_h7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "h7"
+    },
+    {
+      "id": "B_P_e7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "e7"
+    },
+    {
+      "id": "B_P_f7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "f7"
+    },
+    {
+      "id": "B_P_b7",
+      "type": "P",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "b7"
+    },
+    {
+      "id": "B_Q_d8",
+      "type": "Q",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "d8"
+    },
+    {
+      "id": "B_R_h8",
+      "type": "R",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "h8"
+    },
+    {
+      "id": "B_R_a8",
+      "type": "R",
+      "color": "B",
+      "is_grouped": false,
+      "origin_square": "a8"
+    },
+    {
+      "id": "W_B_c1",
+      "type": "B",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "c1"
+    },
+    {
+      "id": "W_B_f1",
+      "type": "B",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "f1"
+    },
+    {
+      "id": "W_K_e1",
+      "type": "K",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "e1"
+    },
+    {
+      "id": "W_N_g1",
+      "type": "N",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "g1"
+    },
+    {
+      "id": "W_N_b1",
+      "type": "N",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "b1"
+    },
+    {
+      "id": "W_P_e2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "e2"
+    },
+    {
+      "id": "W_P_b2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "b2"
+    },
+    {
+      "id": "W_P_g2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "g2"
+    },
+    {
+      "id": "W_P_c2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "c2"
+    },
+    {
+      "id": "W_P_d2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "d2"
+    },
+    {
+      "id": "W_P_h2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "h2"
+    },
+    {
+      "id": "W_P_f2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "f2"
+    },
+    {
+      "id": "W_P_a2",
+      "type": "P",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "a2"
+    },
+    {
+      "id": "W_Q_d1",
+      "type": "Q",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "d1"
+    },
+    {
+      "id": "W_R_h1",
+      "type": "R",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "h1"
+    },
+    {
+      "id": "W_R_a1",
+      "type": "R",
+      "color": "W",
+      "is_grouped": false,
+      "origin_square": "a1"
+    },
+    {
+      "id": "B_B_ALL",
+      "type": "B",
+      "color": "B",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "B_K_ALL",
+      "type": "K",
+      "color": "B",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "B_N_ALL",
+      "type": "N",
+      "color": "B",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "B_P_ALL",
+      "type": "P",
+      "color": "B",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "B_Q_ALL",
+      "type": "Q",
+      "color": "B",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "B_R_ALL",
+      "type": "R",
+      "color": "B",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "W_B_ALL",
+      "type": "B",
+      "color": "W",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "W_K_ALL",
+      "type": "K",
+      "color": "W",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "W_N_ALL",
+      "type": "N",
+      "color": "W",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "W_P_ALL",
+      "type": "P",
+      "color": "W",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "W_Q_ALL",
+      "type": "Q",
+      "color": "W",
+      "is_grouped": true,
+      "origin_square": null
+    },
+    {
+      "id": "W_R_ALL",
+      "type": "R",
+      "color": "W",
+      "is_grouped": true,
+      "origin_square": null
+    }
+  ]
+}
